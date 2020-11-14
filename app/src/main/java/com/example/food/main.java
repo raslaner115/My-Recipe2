@@ -20,7 +20,7 @@ public class main extends AppCompatActivity {
 
         NavigationView nav=findViewById(R.id.menu);
         Toolbar toolbar =(Toolbar)findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
     }
 
 }

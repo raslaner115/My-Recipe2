@@ -1,17 +1,29 @@
 package com.example.food;
 //__________________________________________________________________________________________________
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import java.io.File;
+
 //__________________________________________________________________________________________________
 public class register extends AppCompatActivity {
     @Override
@@ -50,8 +62,30 @@ public class register extends AppCompatActivity {
 //connect to the firebase___________________________________________________________________________
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference myRef = database.getReference(username2);
+                StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
 //check password____________________________________________________________________________________
-                if (password2.length()<8){
+
+                    Uri file = Uri.fromFile(new File("path/to/images/rivers.jpg"));
+                    StorageReference riversRef = mStorageRef.child("test");
+
+                    riversRef.putFile(file)
+                            .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                @Override
+                                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                    // Get a URL to the uploaded content
+                                    Uri downloadUrl = taskSnapshot.getUploadSessionUri();
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception exception) {
+                                    // Handle unsuccessful uploads
+                                    // ...
+                                }
+                            });
+
+//__________________________________________________________________________________________________
+                    if (password2.length()<8){
                     password.setError("invaild password");
                     y++;}
                 else if(!checkarray(pass,passwordC)){
@@ -82,6 +116,7 @@ public class register extends AppCompatActivity {
                     myRef.child("email").setValue("wait...");
                     startActivity(new Intent(register.this,LogIn.class));
                 }}}
+
         });
     }
 //check conniction__________________________________________________________________________________
