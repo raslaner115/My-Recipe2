@@ -41,28 +41,28 @@ public class register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(!isConnected(this)){
-                     Toast.makeText(getApplicationContext(),"there is no internet conniction",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"there is no internet conniction",Toast.LENGTH_LONG).show();
                 }
                 else {
-                String email2 = email.getText().toString();
-                String fname2 = fname.getText().toString();
-                String password2 = password.getText().toString();
-                String username2 = username.getText().toString();
+                    String email2 = email.getText().toString();
+                    String fname2 = fname.getText().toString();
+                    String password2 = password.getText().toString();
+                    String username2 = username.getText().toString();
 
-                char[] alphabet = "abcdefghijklmnopq rstuvwxyzا أ ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي ة ء ئ ؤ ".toCharArray();
-                char[] passwordC = "abcdefghijklmnopq rstuvwxyz1234567890!@#$%&".toCharArray();
-                char[] userc = "abcdefghijklmnopq.rstuvwxyz1234567890_-".toCharArray();
+                    char[] alphabet = "abcdefghijklmnopq rstuvwxyzا أ ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي ة ء ئ ؤ ".toCharArray();
+                    char[] passwordC = "abcdefghijklmnopq rstuvwxyz1234567890!@#$%&".toCharArray();
+                    char[] userc = "abcdefghijklmnopq.rstuvwxyz1234567890_-".toCharArray();
 
-                char[] user = username2.toCharArray();
-                char[] name = fname2.toCharArray();
-                char[] pass = password2.toCharArray();
-                char[] mail = email2.toCharArray();
+                    char[] user = username2.toCharArray();
+                    char[] name = fname2.toCharArray();
+                    char[] pass = password2.toCharArray();
+                    char[] mail = email2.toCharArray();
 
-                int y=0;
+                    int y=0;
 //connect to the firebase___________________________________________________________________________
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference(username2);
-                StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRef = database.getReference(username2);
+                    StorageReference mStorageRef = FirebaseStorage.getInstance().getReference();
 //check password____________________________________________________________________________________
 
                     Uri file = Uri.fromFile(new File("path/to/images/rivers.jpg"));
@@ -86,45 +86,45 @@ public class register extends AppCompatActivity {
 
 //__________________________________________________________________________________________________
                     if (password2.length()<8){
-                    password.setError("invaild password");
-                    y++;}
-                else if(!checkarray(pass,passwordC)){
+                        password.setError("invaild password");
+                        y++;}
+                    else if(!checkarray(pass,passwordC)){
                         password.setError("invaild leatter");
                         y++;}
 //check name________________________________________________________________________________________
-                 if(fname2.length()<6){
-                    fname.setError("invield name");
-                    y++;
-                }
-                else if(!checkarray(name,alphabet)){
+                    if(fname2.length()<6){
+                        fname.setError("invield name");
+                        y++;
+                    }
+                    else if(!checkarray(name,alphabet)){
                         fname.setError("invaild leatter");
                         y++;
-                }
+                    }
 //check username____________________________________________________________________________________
-                 if(username2.length()<6){
-                    username.setError("invield name");
-                    y++;
-                }
-                else  if (!checkarray(user,userc)){
+                    if(username2.length()<6){
+                        username.setError("invield name");
+                        y++;
+                    }
+                    else  if (!checkarray(user,userc)){
                         username.setError("invield letter");
                         y++;
-                }
+                    }
 //check if there some thing wrong___________________________________________________________________
-                if (y==0){
-                    myRef.child("full name").setValue(fname2);
-                    myRef.child("password").setValue(password2);
-                    myRef.child("email").setValue("wait...");
-                    startActivity(new Intent(register.this,LogIn.class));
-                }}}
+                    if (y==0){
+                        myRef.child("full name").setValue(fname2);
+                        myRef.child("password").setValue(password2);
+                        myRef.child("email").setValue("wait...");
+                        startActivity(new Intent(register.this,LogIn.class));
+                    }}}
 
         });
     }
-//check conniction__________________________________________________________________________________
+    //check conniction__________________________________________________________________________________
     private boolean isConnected(View.OnClickListener onClickListener) {
-            ConnectivityManager connectivityManager
-                    = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-            NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-            return activeNetworkInfo != null && activeNetworkInfo.isConnected(); }
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected(); }
 //helper funcntion check if the leatters in array ar1 in ar2________________________________________
 
     public boolean checkarray(char ar1[],char ar2[]){
