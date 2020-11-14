@@ -18,8 +18,6 @@ public class main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        NavigationView nav=findViewById(R.id.menu);
-        Toolbar toolbar =(Toolbar)findViewById(R.id.toolbar);
 
     }
 
