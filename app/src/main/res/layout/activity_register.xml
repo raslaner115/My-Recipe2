@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".register">
+
+    <EditText
+        android:id="@+id/fname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="380dp"
+        android:background="@drawable/input"
+        android:drawableStart="@drawable/ic_name"
+        android:drawableLeft="@drawable/ic_name"
+        android:ems="10"
+        android:hint="Full Name"
+        android:inputType="textPersonName"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="84dp" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="320dp"
+        android:background="@drawable/input"
+        android:drawableStart="@drawable/ic_email"
+        android:drawableLeft="@drawable/ic_email"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="155dp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="200dp"
+        android:background="@drawable/input"
+        android:drawableStart="@drawable/ic_password"
+        android:drawableLeft="@drawable/ic_password"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="227dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="155dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="125dp"
+        android:layout_marginRight="125dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/button"
+        android:fontFamily="cursive"
+        android:text="Register"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="260dp"
+        android:background="@drawable/input"
+        android:drawableStart="@drawable/ic_name"
+        android:drawableLeft="@drawable/ic_name"
+        android:ems="10"
+        android:hint="UserName"
+        android:inputType="textPersonName" />
+</RelativeLayout>

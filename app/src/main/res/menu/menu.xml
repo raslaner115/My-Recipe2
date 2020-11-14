@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group android:checkableBehavior="single">
+    <item android:id="@+id/profile" android:title="profile" android:icon="@drawable/ic_profile"></item>
+    <item android:id="@+id/favorite" android:title="favorite" android:icon="@drawable/ic_unlike"></item>
+</group>
+
+<group android:checkableBehavior="single">
+    <item android:id="@+id/food" android:title="food" android:icon="@drawable/ic_dish"></item>
+    <item android:id="@+id/drink" android:title="drink" android:icon="@drawable/ic_cocktaila"></item>
+
+</group>
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/settings" android:title="settings" android:icon="@drawable/ic_settings"></item>
+    </group>
+
+</menu>

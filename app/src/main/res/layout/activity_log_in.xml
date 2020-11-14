@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LogIn"
+    android:background="@color/white"
+    >
+
+    <EditText
+
+        android:id="@+id/fname"
+        android:hint="email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="300dp"
+        android:background="@drawable/input"
+        android:drawableStart="@drawable/ic_email"
+        android:drawableLeft="@drawable/ic_email"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:hint="password"
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+
+        android:layout_marginBottom="240dp"
+        android:background="@drawable/input"
+        android:drawableStart="@drawable/ic_password"
+        android:drawableLeft="@drawable/ic_password"
+
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="135dp"
+        android:layout_marginRight="135dp"
+        android:layout_marginBottom="135dp"
+        android:background="@drawable/button"
+        android:fontFamily="cursive"
+        android:text="LOGIN"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="157dp"
+        android:layout_marginRight="157dp"
+        android:layout_marginBottom="90dp"
+        android:text="register"
+        android:textSize="32sp" />
+
+
+</RelativeLayout>
